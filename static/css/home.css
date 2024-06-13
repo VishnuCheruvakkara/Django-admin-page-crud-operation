@@ -1,0 +1,14 @@
+.signout_button{
+    text-decoration: none;
+    color:white;
+}
+.btn-outline-light:hover .signout_button{
+    text-decoration: none;
+    color: #4158d0;
+   
+}
+.btn-outline-light:hover {
+    background-color: white;
+    transition: background-color 0.5s;
+}
+

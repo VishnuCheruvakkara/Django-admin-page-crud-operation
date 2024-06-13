@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallary 8 Home Page</title>
+  <link href="{% static '/css/home.css' %}" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    @keyframes colorFade{
+    0% {
+        color:#4158d0;
+    }
+    20% {
+         color:hsl(230, 60%, 54%);
+    }
+    40% {
+        color:  #c850c0;
+    }
+    60% {
+        color:#4158d0;
+    }
+    80% {
+        color:  #c850c0;
+    }
+    100% {
+        color:#4158d0;
+    }
+    }
+
+    .animated-text{
+    animation: colorFade 5s infinite;
+} 
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary" style=" background: linear-gradient(-135deg, #c850c0, #4158d0) !important;">
+  <a class="navbar-brand" href="#" style="color:antiquewhite">GAllARY 8</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home'%}" style="color:antiquewhite" >Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <!-- button added -->
+
+      <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><a class="signout_button" href="{% url 'logout' %}">Sign out</a></button>
+    </form>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <h1 class="animated-text">hello {{user.username | upper }} !</h1>
+  <h1>Welcome to GALLARY 8</h1>
+  <p>Origin of Creativity</p>
+  
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
