@@ -9,22 +9,35 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import environ
 from pathlib import Path
 import os 
 
+
+# env=environ.Env()
+# environ.Env.read_env()
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+# Initialize environment variables
+env=environ.Env(
+    DEBUG=(bool,False)
+)
+# Reading .env file
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c4&-^fy!x4h-kw^&k7l*1y0t9*pp*blclkwe_r5ji&bsj7ko+1'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool('DEBUG', default=False) 
 
 ALLOWED_HOSTS = []
 
@@ -78,15 +91,14 @@ WSGI_APPLICATION = 'login_system.wsgi.application'
 
 DATABASES = {
     'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'admin_login_b2',     #  PostgreSQL database name
-        'USER': 'postgres',   #  PostgreSQL username
-        'HOST': 'localhost',                   # Your database host (use 'localhost' if it's on the same machine)
-        'PORT': '5432',   
-        'PASSWORD':'Ana@123'
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('DATABASE_NAME'),      # Load from .env
+        'USER': env('DATABASE_USER'),      # Load from .env
+        'PASSWORD': env('DATABASE_PASSWORD'),  # Load from .env
+        'HOST': env('DATABASE_HOST'),      # Load from .env
+        'PORT': env('DATABASE_PORT'),      # Load from .env
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
