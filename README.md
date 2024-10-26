@@ -17,10 +17,12 @@ It contain both admin adn user side
 
 ## Requirements
 
-- Python 3.x
-- Django 5.x
-- PostgreSQL (or your preferred database)
-- [Other dependencies as specified in requirements.txt]
+-﻿ asgiref==3.8.1
+- Django==5.0.6
+- django-environ==0.11.2
+- psycopg2==2.9.9
+- sqlparse==0.5.0
+- tzdata==2024.1 
 
 ## Installation
 
