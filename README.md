@@ -24,9 +24,4 @@ It contain both admin adn user side
 - sqlparse==0.5.0
 - tzdata==2024.1 
 
-## Installation
 
-1. **Clone the Repository**:
-   ```bash
-   git clone <repository-url>
-   cd <repository-directory>
