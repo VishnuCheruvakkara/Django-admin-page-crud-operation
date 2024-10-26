@@ -17,7 +17,7 @@ It contain both admin adn user side
 
 ## Requirements
 
--﻿ asgiref==3.8.1
+- asgiref==3.8.1
 - Django==5.0.6
 - django-environ==0.11.2
 - psycopg2==2.9.9
