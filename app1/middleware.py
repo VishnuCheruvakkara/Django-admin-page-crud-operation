@@ -13,3 +13,5 @@ class RestrictAdminUserMiddleware:
 
         response = self.get_response(request)
         return response
+
+

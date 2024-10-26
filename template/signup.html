@@ -153,10 +153,16 @@ form .signup-link a:hover{
                <input type="text" required name="name">
                <label>User Name</label>
             </div>
+            {% if name_error %}
+            <p style="color:red">{{ name_error }}</p>
+            {% endif %}
             <div class="field">
                 <input type="email" required name="email">
                 <label>Email</label>
              </div>
+             {% if email_error %}
+             <p style="color:red">{{ email_error }}</p>
+             {% endif %}
             <div class="field">
                <input type="password" required name="pass1">
                <label>Password</label>
